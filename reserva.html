@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva - Hotel Bosco</title>
+    <style>
+        body {background-color: #fffae6; font-family: Arial, sans-serif; margin: 20px;}
+        h1 {color: rgb(255, 187, 0);}
+        fieldset {border: 1px solid rgb(255, 208, 0); padding: 15px; margin-bottom: 15px; background: #fff; }
+        legend {font-weight: bold; color: rgb(200, 145, 0); }
+        label {display: block; margin-top: 10px; font-weight: 500;}
+        input[type="text"], input[type="date"], input[type="time"], select { width: 100%; max-width: 300px; padding: 5px; margin-top: 5px; border: 1px solid rgb(255, 208, 0); }
+        input[type="radio"], input[type="checkbox"] {width: auto; margin-right: 5px;}
+        .inline {display: inline; font-weight: normal; margin-right: 10px;}
+        button, input[type="submit"], input[type="reset"] {padding: 8px 15px; background: #ffd900; border: 1px solid rgb(200, 145, 0); cursor: pointer; font-weight: bold; margin-top: 10px; }
+        input[type="reset"] {background: #e0e0e0;}
+        a {display: inline-block; margin-top: 15px; color: rgb(180, 130, 0); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Haga su reserva</h1>
+    <form action="procesareserva.php" method="GET">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" maxlength="100" required autofocus>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" maxlength="100" required>
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" maxlength="10" placeholder="DNI con letra" required>
+        </fieldset>
+        <fieldset>
+            <legend>Datos de su estancia</legend>
+            <label>Habitación:</label>
+            <input type="radio" id="ind" name="habitación" value="Individual" checked><label for="ind" class="inline">Individual</label>
+            <input type="radio" id="dob" name="habitación" value="Doble"><label for="dob" class="inline">Doble</label>
+            <input type="radio" id="tri" name="habitación" value="Triple"><label for="tri" class="inline">Triple</label>
+            <label for="personas">Número de personas:</label>
+            <select id="personas" name="personas">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <br><br>
+            <input type="checkbox" id="mascotas" name="mascotas" value="si">
+            <label for="mascotas" class="inline">Llevo mascotas</label>
+            <label for="fecha">Fecha de llegada:</label>
+            <input type="date" id="fecha" name="fecha">
+            <label for="hora">Hora de llegada:</label>
+            <input type="time" id="hora" name="hora">
+        </fieldset>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Reiniciar">
+    </form>
+    <a href="index.html">Volver</a>
+</body>
+</html>
